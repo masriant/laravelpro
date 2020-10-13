@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\FluentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Monolog\Formatter\FluentdFormatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +44,5 @@ Route::get('/add-post', [ClientController::class, 'addPost'])->name('posts.addpo
 Route::get('/update-post', [ClientController::class, 'updatePost'])->name('posts.update');
 
 Route::get('/delete-post/{id}', [ClientController::class, 'deletePost'])->name('post.delete');
+
+Route::get('/fluent-string', [FluentController::class, 'index'])->name('fluents.index');
